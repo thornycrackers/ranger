@@ -137,10 +137,6 @@ def main(
             sys.stderr.write("Error: Must run ranger from terminal\n")
             raise SystemExit(1)
 
-        if fm.username == 'root':
-            fm.settings.preview_files = False
-            fm.settings.use_preview_script = False
-            LOG.info("Running as root, disabling the file previews.")
         if not args.debug:
             from ranger.ext import curses_interrupt_handler
             curses_interrupt_handler.install_interrupt_handler()
